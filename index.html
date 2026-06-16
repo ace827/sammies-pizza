@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sammies Pizza — Manchester, Ohio</title>
+  <meta name="description" content="Sammies Pizza in Manchester, OH — family-owned carry-out pizza made fresh to order. Call (937) 549-0003." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink:      #100c0a;
+      --ink2:     #1c1714;
+      --ink3:     #261f1c;
+      --red:      #9e2a1c;
+      --red2:     #b83020;
+      --red3:     #7a1f14;
+      --gold:     #c8a25a;
+      --gold2:    #dbb870;
+      --cream:    #fdf8f2;
+      --warm:     #f7f0e6;
+      --border:   #e8ddd0;
+      --mid:      #8a7b6e;
+      --dark:     #3d3028;
+      --card:     #f4ede3;
+      --white:    #ffffff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+
+    a { color: inherit; text-decoration: none; }
+
+    img { max-width: 100%; display: block; }
+
+    /* ── SVG SPRITE ── */
+    .sprite { display: none; }
+
+    /* ── TOPBAR ── */
+    .topbar {
+      background: var(--ink);
+      color: rgba(255,255,255,.7);
+      font-size: .8rem;
+      font-weight: 500;
+      letter-spacing: .04em;
+      padding: .55rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .topbar-left { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .topbar-item { display: flex; align-items: center; gap: .4rem; }
+    .topbar svg { width: 13px; height: 13px; opacity: .7; flex-shrink: 0; }
+    .topbar-cta {
+      background: var(--red);
+      color: #fff;
+      padding: .35rem .9rem;
+      border-radius: 3px;
+      font-weight: 600;
+      font-size: .78rem;
+      letter-spacing: .06em;
+      transition: background .2s;
+      white-space: nowrap;
+    }
+    .topbar-cta:hover { background: var(--red2); }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(16,12,10,.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      height: 62px;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      color: #fff;
+    }
+    .nav-logo {
+      width: 38px;
+      height: 38px;
+      background: var(--red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .nav-logo svg { width: 20px; height: 20px; color: #fff; }
+    .nav-name { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: #fff; line-height: 1.1; }
+    .nav-city { font-size: .7rem; color: var(--gold); letter-spacing: .1em; text-transform: uppercase; font-weight: 500; }
+    .nav-links { display: flex; align-items: center; gap: 1.8rem; }
+    .nav-links a { color: rgba(255,255,255,.75); font-size: .85rem; font-weight: 500; letter-spacing: .03em; transition: color .2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--red);
+      color: #fff;
+      padding: .45rem 1.1rem;
+      border-radius: 4px;
+      font-size: .82rem;
+      font-weight: 600;
+      letter-spacing: .05em;
+      transition: background .2s, transform .15s;
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--red2); transform: translateY(-1px); }
+    .nav-cta svg { width: 14px; height: 14px; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1920&q=85');
+      background-size: cover;
+      background-position: center 40%;
+    }
+    .hero-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg, rgba(10,6,4,.88) 0%, rgba(10,6,4,.65) 55%, rgba(10,6,4,.3) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 4rem;
+      align-items: center;
+      width: 100%;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: rgba(200,162,90,.15);
+      border: 1px solid rgba(200,162,90,.35);
+      color: var(--gold2);
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .35rem .8rem;
+      border-radius: 2px;
+      margin-bottom: 1.2rem;
+    }
+    .hero-eyebrow svg { width: 12px; height: 12px; }
+    .hero h1 {
+      font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.05;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,.75);
+      max-width: 520px;
+      margin-bottom: 2rem;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--red);
+      color: #fff;
+      padding: .85rem 1.8rem;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: .95rem;
+      letter-spacing: .04em;
+      transition: background .2s, transform .15s, box-shadow .2s;
+      box-shadow: 0 4px 20px rgba(158,42,28,.4);
+    }
+    .btn-primary:hover { background: var(--red2); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(158,42,28,.5); }
+    .btn-primary svg { width: 16px; height: 16px; }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,.4);
+      padding: .85rem 1.8rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: .95rem;
+      transition: border-color .2s, background .2s;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .btn-outline svg { width: 16px; height: 16px; }
+
+    /* Hero info card */
+    .hero-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(16px);
+      border-radius: 8px;
+      padding: 2rem;
+      color: #fff;
+    }
+    .hero-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      padding-bottom: .8rem;
+    }
+    .hero-card-title svg { width: 16px; height: 16px; }
+    .card-info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: .7rem;
+      margin-bottom: 1rem;
+      font-size: .9rem;
+    }
+    .card-info-row svg { width: 15px; height: 15px; color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+    .card-info-label { color: rgba(255,255,255,.5); font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 600; display: block; margin-bottom: .15rem; }
+    .card-hours-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .25rem .5rem; font-size: .82rem; }
+    .card-hours-grid .day { color: rgba(255,255,255,.55); }
+    .card-hours-grid .time { color: rgba(255,255,255,.9); font-weight: 500; }
+    .hero-badge {
+      margin-top: 1.2rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(255,255,255,.1);
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .stars { display: flex; gap: 2px; }
+    .stars svg { width: 14px; height: 14px; color: var(--gold); }
+    .hero-badge-text { font-size: .8rem; color: rgba(255,255,255,.65); }
+    .hero-badge-text strong { color: #fff; }
+
+    /* ── STATS BAND ── */
+    .stats {
+      background: var(--red);
+      padding: 2rem;
+    }
+    .stats-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      text-align: center;
+    }
+    .stat-item { padding: .5rem; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: .3rem;
+    }
+    .stat-label {
+      font-size: .78rem;
+      color: rgba(255,255,255,.8);
+      font-weight: 500;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .stat-divider {
+      width: 1px;
+      background: rgba(255,255,255,.2);
+      align-self: stretch;
+      margin: .5rem 0;
+    }
+
+    /* ── SECTION COMMONS ── */
+    section { padding: 5.5rem 2rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-eyebrow {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: .6rem;
+    }
+    .section-title {
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      font-weight: 900;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+    .section-title.light { color: #fff; }
+    .section-lead {
+      font-size: 1.05rem;
+      color: var(--mid);
+      max-width: 580px;
+      line-height: 1.75;
+      margin-bottom: 3rem;
+    }
+    .section-lead.light { color: rgba(255,255,255,.65); }
+
+    /* ── MENU ── */
+    .menu-section { background: var(--cream); }
+    .menu-tabs {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: .88rem;
+      font-weight: 600;
+      color: var(--mid);
+      padding: .6rem 1.2rem;
+      letter-spacing: .04em;
+      transition: color .2s;
+      position: relative;
+      bottom: -2px;
+      border-bottom: 2px solid transparent;
+    }
+    .tab-btn:hover { color: var(--red); }
+    .tab-btn.active { color: var(--red); border-bottom-color: var(--red); }
+
+    .menu-panel { display: none; }
+    .menu-panel.active { display: block; }
+
+    .menu-category-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .menu-category-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 2.5rem; }
+    .menu-item {
+      background: var(--white);
+      padding: 1.4rem 1.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: background .2s;
+    }
+    .menu-item:hover { background: var(--warm); }
+    .menu-item-name {
+      font-weight: 600;
+      font-size: .95rem;
+      color: var(--ink);
+      margin-bottom: .25rem;
+    }
+    .menu-item-desc { font-size: .82rem; color: var(--mid); line-height: 1.5; }
+    .menu-item-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--red);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .menu-size-row {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      margin-top: .4rem;
+    }
+    .size-chip {
+      font-size: .72rem;
+      background: var(--card);
+      color: var(--dark);
+      padding: .15rem .5rem;
+      border-radius: 2px;
+      font-weight: 600;
+      letter-spacing: .04em;
+    }
+
+    /* ── ABOUT ── */
+    .about-section { background: var(--warm); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .about-img-wrap {
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .about-img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+    }
+    .about-img-bg {
+      width: 100%;
+      height: 480px;
+      background-image: url('https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=800&q=85');
+      background-size: cover;
+      background-position: center;
+      border-radius: 6px;
+    }
+    .about-accent {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      width: 140px;
+      height: 140px;
+      background: var(--red);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0,0,0,.25);
+    }
+    .about-accent-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .about-accent-label { font-size: .65rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 600; opacity: .85; }
+    .about-checks { list-style: none; margin: 1.5rem 0 2rem; }
+    .about-checks li {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      margin-bottom: .9rem;
+      font-size: .95rem;
+      color: var(--dark);
+    }
+    .check-icon {
+      width: 20px;
+      height: 20px;
+      background: var(--red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .check-icon svg { width: 11px; height: 11px; color: #fff; }
+
+    /* ── REVIEWS ── */
+    .reviews-section { background: var(--ink2); }
+    .reviews-section .section-eyebrow { color: var(--gold); }
+    .pullquote {
+      border-left: 4px solid var(--red);
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+      background: rgba(255,255,255,.04);
+      border-radius: 0 6px 6px 0;
+    }
+    .pullquote-text {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+      font-style: italic;
+      color: rgba(255,255,255,.9);
+      line-height: 1.55;
+      margin-bottom: .75rem;
+    }
+    .pullquote-author { font-size: .82rem; color: rgba(255,255,255,.45); font-weight: 500; }
+    .review-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+    .review-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 6px;
+      padding: 1.5rem;
+    }
+    .review-stars { display: flex; gap: 3px; margin-bottom: .8rem; }
+    .review-stars svg { width: 14px; height: 14px; color: var(--gold); }
+    .review-text { font-size: .9rem; color: rgba(255,255,255,.7); line-height: 1.65; margin-bottom: 1rem; font-style: italic; }
+    .review-author { font-size: .78rem; color: rgba(255,255,255,.4); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+
+    /* ── FAQ ── */
+    .faq-section { background: var(--cream); }
+    .faq-list { max-width: 720px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      font-family: 'Inter', sans-serif;
+      font-size: .97rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-align: left;
+      transition: color .2s;
+    }
+    .faq-q:hover { color: var(--red); }
+    .faq-q svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      color: var(--red);
+      transition: transform .3s;
+    }
+    .faq-item.open .faq-q svg { transform: rotate(180deg); }
+    .faq-a {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height .35s ease, padding .25s ease;
+    }
+    .faq-item.open .faq-a { max-height: 300px; padding-bottom: 1.25rem; }
+    .faq-a p { font-size: .92rem; color: var(--mid); line-height: 1.75; }
+
+    /* ── CTA BAND ── */
+    .cta-band {
+      background: var(--red);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .cta-band h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: .5rem;
+    }
+    .cta-phone {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 900;
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      margin: .75rem 0 1.5rem;
+      letter-spacing: .02em;
+    }
+    .cta-sub { color: rgba(255,255,255,.8); font-size: 1rem; margin-bottom: 2rem; }
+    .btn-white {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: #fff;
+      color: var(--red);
+      padding: .9rem 2.2rem;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 20px rgba(0,0,0,.2);
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.25); }
+    .btn-white svg { width: 18px; height: 18px; }
+
+    /* ── CONTACT ── */
+    .contact-section { background: var(--ink); }
+    .contact-section .section-eyebrow { color: var(--gold); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .hours-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    .hours-table td {
+      padding: .6rem 0;
+      font-size: .9rem;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+    .hours-table .day-col { color: rgba(255,255,255,.55); }
+    .hours-table .time-col { color: rgba(255,255,255,.85); font-weight: 500; text-align: right; }
+    .hours-table tr.today td { color: var(--gold); font-weight: 700; }
+    .contact-info-block { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+    .cib-row { display: flex; align-items: center; gap: .75rem; }
+    .cib-row svg { width: 16px; height: 16px; color: var(--gold); flex-shrink: 0; }
+    .cib-row span { font-size: .9rem; color: rgba(255,255,255,.7); }
+
+    /* callback form */
+    .callback-form {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 8px;
+      padding: 2.5rem;
+    }
+    .form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1.5rem;
+    }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: .4rem; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group label { font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 4px;
+      padding: .7rem 1rem;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: .9rem;
+      transition: border-color .2s;
+      outline: none;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,.25); }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: var(--gold); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-submit {
+      margin-top: 1.25rem;
+      width: 100%;
+      background: var(--red);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: .9rem;
+      font-family: 'Inter', sans-serif;
+      font-size: .95rem;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: .04em;
+      transition: background .2s, transform .15s;
+    }
+    .form-submit:hover { background: var(--red2); transform: translateY(-1px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      border-top: 1px solid rgba(255,255,255,.07);
+      padding: 3rem 2rem 1.5rem;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .footer-brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: .3rem;
+    }
+    .footer-brand-tag { font-size: .82rem; color: rgba(255,255,255,.4); line-height: 1.6; max-width: 280px; }
+    .footer-col-title {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
+    .footer-col ul li a { font-size: .88rem; color: rgba(255,255,255,.5); transition: color .2s; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-copy { font-size: .78rem; color: rgba(255,255,255,.3); }
+    .footer-stars { display: flex; align-items: center; gap: .4rem; }
+    .footer-stars svg { width: 13px; height: 13px; color: var(--gold); }
+    .footer-stars span { font-size: .78rem; color: rgba(255,255,255,.4); }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    .rl { opacity: 0; transform: translateX(-30px); transition: opacity .65s ease, transform .65s ease; }
+    .rl.in { opacity: 1; transform: none; }
+    .rr { opacity: 0; transform: translateX(30px); transition: opacity .65s ease, transform .65s ease; }
+    .rr.in { opacity: 1; transform: none; }
+    .d1 { transition-delay: .1s; }
+    .d2 { transition-delay: .2s; }
+    .d3 { transition-delay: .3s; }
+    .d4 { transition-delay: .4s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .hero-content { grid-template-columns: 1fr; }
+      .hero-card { max-width: 420px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-divider { display: none; }
+    }
+    @media (max-width: 768px) {
+      .topbar-left { display: none; }
+      .nav-links { display: none; }
+      nav { padding: 0 1rem; }
+      section { padding: 3.5rem 1rem; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-img-bg { height: 300px; }
+      .about-accent { bottom: -.75rem; right: -.75rem; width: 110px; height: 110px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .form-grid { grid-template-columns: 1fr; }
+      .hero-content { padding: 4rem 1rem 3rem; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- SVG SPRITE -->
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+  </symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+  </symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+  </symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+  </symbol>
+  <symbol id="i-pizza" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2L2 22l20-4-10-16z"/><circle cx="12" cy="13" r="1" fill="currentColor"/>
+  </symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="20 6 9 17 4 12"/>
+  </symbol>
+  <symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="6 9 12 15 18 9"/>
+  </symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+  </symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+  </symbol>
+  <symbol id="i-fire" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+  </symbol>
+  <symbol id="i-cookie" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/>
+  </symbol>
+  <symbol id="i-sandwich" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 11v3a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-3"/><path d="M12 19H4a1 1 0 0 1-1-1v-2h14v2a1 1 0 0 1-1 1Z"/><path d="M20 11V8a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v3"/><path d="M12 5v6"/><path d="M3 11h18"/>
+  </symbol>
+</svg>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="topbar-item">
+      <svg><use href="#i-pin"/></svg>
+      403 Jack Roush Way, Manchester, OH 45144
+    </div>
+    <div class="topbar-item">
+      <svg><use href="#i-clock"/></svg>
+      Mon–Sat: 4:00 PM – 9:00 PM &nbsp;|&nbsp; Carry-Out Only
+    </div>
+  </div>
+  <a href="tel:9375490003" class="topbar-cta">
+    <svg width="11" height="11"><use href="#i-phone"/></svg>
+    (937) 549-0003
+  </a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">
+    <div class="nav-logo">
+      <svg><use href="#i-pizza"/></svg>
+    </div>
+    <div>
+      <div class="nav-name">Sammies Pizza</div>
+      <div class="nav-city">Manchester, Ohio</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#menu">Menu</a>
+    <a href="#about">Our Story</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="tel:9375490003" class="nav-cta">
+    <svg><use href="#i-phone"/></svg>
+    Call to Order
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-img"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-eyebrow">
+        <svg><use href="#i-pin"/></svg>
+        Manchester, Ohio
+      </div>
+      <h1>Fresh-Made Pizza <br><em>Worth the Drive.</em></h1>
+      <p class="hero-sub">
+        Family-owned, community-loved. Sammies Pizza has been serving Manchester and the surrounding area with hand-crafted pizzas, overstuffed subs, and made-from-scratch goodness — every single night.
+      </p>
+      <div class="hero-actions">
+        <a href="tel:9375490003" class="btn-primary">
+          <svg><use href="#i-phone"/></svg>
+          Call to Order Now
+        </a>
+        <a href="#menu" class="btn-outline">
+          <svg><use href="#i-arrow"/></svg>
+          View Our Menu
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-card reveal d1">
+      <div class="hero-card-title">
+        <svg><use href="#i-clock"/></svg>
+        Hours &amp; Info
+      </div>
+      <div class="card-info-row">
+        <svg><use href="#i-clock"/></svg>
+        <div>
+          <span class="card-info-label">Hours Open</span>
+          <div class="card-hours-grid">
+            <span class="day">Mon – Sat</span><span class="time">4:00 – 9:00 PM</span>
+            <span class="day">Sunday</span><span class="time">Closed</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-info-row">
+        <svg><use href="#i-pin"/></svg>
+        <div>
+          <span class="card-info-label">Location</span>
+          403 Jack Roush Way<br>Manchester, OH 45144
+        </div>
+      </div>
+      <div class="card-info-row">
+        <svg><use href="#i-phone"/></svg>
+        <div>
+          <span class="card-info-label">Phone</span>
+          <a href="tel:9375490003" style="color:#fff;font-weight:600;">(937) 549-0003</a>
+        </div>
+      </div>
+      <div class="hero-badge">
+        <div class="stars">
+          <svg><use href="#i-star"/></svg>
+          <svg><use href="#i-star"/></svg>
+          <svg><use href="#i-star"/></svg>
+          <svg><use href="#i-star"/></svg>
+          <svg><use href="#i-star"/></svg>
+        </div>
+        <div class="hero-badge-text"><strong>Carry-Out Only</strong> · Fast &amp; Fresh</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<div class="stats">
+  <div class="stats-grid">
+    <div class="stat-item reveal">
+      <div class="stat-num"><span data-count="5">0</span>★</div>
+      <div class="stat-label">Google Rating</div>
+    </div>
+    <div class="stat-item reveal d1">
+      <div class="stat-num"><span data-count="6">0</span>+ Yrs</div>
+      <div class="stat-label">Family Owned</div>
+    </div>
+    <div class="stat-item reveal d2">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Fresh Ingredients</div>
+    </div>
+    <div class="stat-item reveal d3">
+      <div class="stat-num">Fast</div>
+      <div class="stat-label">Carry-Out Ready</div>
+    </div>
+  </div>
+</div>
+
+<!-- MENU -->
+<section class="menu-section" id="menu">
+  <div class="section-inner">
+    <p class="section-eyebrow reveal">What We Serve</p>
+    <h2 class="section-title reveal">Our Menu</h2>
+    <p class="section-lead reveal">Everything is made fresh to order. Call ahead for the fastest pickup experience.</p>
+
+    <div class="menu-tabs">
+      <button class="tab-btn active" data-tab="pizza">Pizza</button>
+      <button class="tab-btn" data-tab="subs">Subs</button>
+      <button class="tab-btn" data-tab="sides">Sides &amp; Desserts</button>
+    </div>
+
+    <!-- PIZZA PANEL -->
+    <div class="menu-panel active" id="tab-pizza">
+      <div class="menu-category-title">Classic Pizzas</div>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">The Sammie Special</div>
+            <div class="menu-item-desc">Our signature — loaded with pepperoni, sausage, mushrooms, green peppers &amp; onions</div>
+            <div class="menu-size-row">
+              <span class="size-chip">10"</span>
+              <span class="size-chip">12"</span>
+              <span class="size-chip">16"</span>
+            </div>
+          </div>
+          <div class="menu-item-price">From $12</div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Classic Pepperoni</div>
+            <div class="menu-item-desc">Our house sauce, whole milk mozzarella, and generous pepperoni coverage</div>
+            <div class="menu-size-row">
+              <span class="size-chip">10"</span>
+              <span class="size-chip">12"</span>
+              <span class="size-chip">16"</span>
+            </div>
+          </div>
+          <div class="menu-item-price">From $10</div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Meat Lovers</div>
+            <div class="menu-item-desc">Pepperoni, sausage, ham, and bacon on a thick layer of mozzarella</div>
+            <div class="menu-size-row">
+              <span class="size-chip">10"</span>
+              <span class="size-chip">12"</span>
+              <span class="size-chip">16"</span>
+            </div>
+          </div>
+          <div class="menu-item-price">From $13</div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Veggie Supreme</div>
+            <div class="menu-item-desc">Mushrooms, black olives, green peppers, onions, and fresh tomato</div>
+            <div class="menu-size-row">
+              <span class="size-chip">10"</span>
+              <span class="size-chip">12"</span>
+              <span class="size-chip">16"</span>
+            </div>
+          </div>
+          <div class="menu-item-price">From $11</div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">BBQ Chicken</div>
+            <div class="menu-item-desc">Smoky BBQ sauce base, grilled chicken, red onion, and mozzarella</div>
+            <div class="menu-size-row">
+              <span class="size-chip">10"</span>
+              <span class="size-chip">12"</span>
+              <span class="size-chip">16"</span>
+            </div>
+          </div>
+          <div class="menu-item-price">From $12</div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Cheese Pizza</div>
+            <div class="menu-item-desc">Simple, classic, and perfect — our house sauce with a generous blanket of mozzarella</div>
+            <div class="menu-size-row">
+              <span class="size-chip">10"</span>
+              <span class="size-chip">12"</span>
+              <span class="size-chip">16"</span>
+            </div>
+          </div>
+          <div class="menu-item-price">From $9</div>
+        </div>
+      </div>
+      <p style="font-size:.85rem;color:var(--mid);margin-top:-.5rem;">
+        Build your own — add any toppings: pepperoni, sausage, mushrooms, onions, green peppers, black olives, jalapeños, ham, bacon, tomato &amp; more. Prices vary by size.
+      </p>
+    </div>
+
+    <!-- SUBS PANEL -->
+    <div class="menu-panel" id="tab-subs">
+      <div class="menu-category-title">Overstuffed Subs</div>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Italian Sub</div>
+            <div class="menu-item-desc">Ham, salami, and pepperoni layered with provolone, lettuce, tomato, onion &amp; Italian dressing</div>
+          </div>
+          <div class="menu-item-price">$8</div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Meatball Sub</div>
+            <div class="menu-item-desc">House-made meatballs simmered in marinara, smothered in mozzarella &amp; toasted to perfection</div>
+          </div>
+          <div class="menu-item-price">$8</div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Club Sub</div>
+            <div class="menu-item-desc">Turkey, ham, bacon, swiss, lettuce, tomato, and mayo on a toasted hoagie roll</div>
+          </div>
+          <div class="menu-item-price">$8</div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Steak &amp; Cheese</div>
+            <div class="menu-item-desc">Thinly sliced beef, sautéed peppers &amp; onions with melted provolone</div>
+          </div>
+          <div class="menu-item-price">$9</div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Veggie Sub</div>
+            <div class="menu-item-desc">Fresh-stacked with mushrooms, peppers, onions, black olives, lettuce, tomato &amp; cheese</div>
+          </div>
+          <div class="menu-item-price">$7</div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Ham &amp; Cheese</div>
+            <div class="menu-item-desc">Classic deli ham with swiss, lettuce, tomato, onion and your choice of dressing</div>
+          </div>
+          <div class="menu-item-price">$7</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIDES PANEL -->
+    <div class="menu-panel" id="tab-sides">
+      <div class="menu-category-title">Sides &amp; Extras</div>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Garlic Breadsticks</div>
+            <div class="menu-item-desc">Fresh-baked breadsticks brushed with garlic butter, served with marinara dipping sauce</div>
+          </div>
+          <div class="menu-item-price">$5</div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Garlic Bread</div>
+            <div class="menu-item-desc">Toasted Italian bread with herb-infused garlic butter — pairs great with any order</div>
+          </div>
+          <div class="menu-item-price">$3</div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Cheese Bread</div>
+            <div class="menu-item-desc">Garlic bread topped with a generous layer of mozzarella, baked until golden</div>
+          </div>
+          <div class="menu-item-price">$5</div>
+        </div>
+      </div>
+
+      <div class="menu-category-title" style="margin-top:1.5rem;">Desserts</div>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Chocolate Chip Cookie</div>
+            <div class="menu-item-desc">Our famous 10-inch fresh-baked chocolate chip cookie — warm, gooey, and the perfect finish to any meal. A fan favorite!</div>
+          </div>
+          <div class="menu-item-price">$7</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:2rem;text-align:center;">
+      <a href="tel:9375490003" class="btn-primary" style="display:inline-flex;">
+        <svg><use href="#i-phone"/></svg>
+        Call to Place Your Order: (937) 549-0003
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="rl" style="position:relative;">
+        <div class="about-img-bg"></div>
+        <div class="about-accent">
+          <div class="about-accent-num">6+</div>
+          <div class="about-accent-label">Years of<br>Craft Pizza</div>
+        </div>
+      </div>
+      <div class="rr">
+        <p class="section-eyebrow">Our Story</p>
+        <h2 class="section-title">Real Food,<br>Made by Real People</h2>
+        <p style="color:var(--mid);font-size:.97rem;line-height:1.8;margin-bottom:1.5rem;">
+          Sammie started with one simple belief: that Manchester deserved a neighborhood pizza place that actually cared — about the ingredients, about the craft, and about the people coming through the door. Six years and countless pies later, that belief hasn't changed one bit.
+        </p>
+        <ul class="about-checks">
+          <li>
+            <div class="check-icon"><svg><use href="#i-check"/></svg></div>
+            Every pizza is made fresh to order — never pre-made or frozen
+          </li>
+          <li>
+            <div class="check-icon"><svg><use href="#i-check"/></svg></div>
+            Quality toppings sourced for flavor, not just cost
+          </li>
+          <li>
+            <div class="check-icon"><svg><use href="#i-check"/></svg></div>
+            Our famous 10" chocolate chip cookie is baked fresh every day
+          </li>
+          <li>
+            <div class="check-icon"><svg><use href="#i-check"/></svg></div>
+            A family operation — Sammie and her team personally prepare every order
+          </li>
+          <li>
+            <div class="check-icon"><svg><use href="#i-check"/></svg></div>
+            Fast, friendly carry-out — your order is always ready when promised
+          </li>
+        </ul>
+        <a href="tel:9375490003" class="btn-primary" style="display:inline-flex;">
+          <svg><use href="#i-phone"/></svg>
+          Call Us: (937) 549-0003
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <div class="section-inner">
+    <p class="section-eyebrow reveal">What People Are Saying</p>
+    <h2 class="section-title light reveal">Manchester's Favorite Pizza</h2>
+
+    <div class="pullquote reveal">
+      <div class="pullquote-text">"Best pizza in a 50-mile radius. Perfect blend of spices, quality ingredients, and the most incredible crust. Fast and friendly staff — this place is the real deal."</div>
+      <div class="pullquote-author">— Google Review</div>
+    </div>
+
+    <div class="review-grid">
+      <div class="review-card reveal">
+        <div class="review-stars">
+          <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg>
+        </div>
+        <p class="review-text">"First time ordering and I was blown away. Excellent service, incredible pizza — better than anywhere else in the area. Highly recommend to everyone!"</p>
+        <div class="review-author">— Google Review</div>
+      </div>
+      <div class="review-card reveal d1">
+        <div class="review-stars">
+          <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg>
+        </div>
+        <p class="review-text">"The pepperoni pizza is absolutely amazing — so fresh you can tell it was made with care. The staff is always warm and welcoming. We drive 20 minutes just for this place."</p>
+        <div class="review-author">— Local Customer</div>
+      </div>
+      <div class="review-card reveal d2">
+        <div class="review-stars">
+          <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg>
+        </div>
+        <p class="review-text">"The Italian sub is the best I've had anywhere. And don't even get me started on the chocolate chip cookie — it's an absolute must-order. We come here every week."</p>
+        <div class="review-author">— Regular Customer</div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">
+          <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg>
+        </div>
+        <p class="review-text">"Sammie and her team are wonderful. The food is always consistent, always hot, and always exactly what I was craving. This is what a small-town pizza place should be."</p>
+        <div class="review-author">— Google Review</div>
+      </div>
+      <div class="review-card reveal d1">
+        <div class="review-stars">
+          <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg>
+        </div>
+        <p class="review-text">"Ordered the Sammie Special and a 10-inch cookie for the family — everyone was raving about it. Fresh, flavorful, and the right price. This is our new go-to spot."</p>
+        <div class="review-author">— Local Family</div>
+      </div>
+      <div class="review-card reveal d2">
+        <div class="review-stars">
+          <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg>
+        </div>
+        <p class="review-text">"Always ready on time, always tastes incredible. In a world of chain restaurants, Sammies is a breath of fresh air. Real people, real food, real good."</p>
+        <div class="review-author">— Yelp Review</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-inner">
+    <p class="section-eyebrow reveal">Got Questions?</p>
+    <h2 class="section-title reveal">Frequently Asked Questions</h2>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Do I need to order in advance, or can I call right before?
+          <svg><use href="#i-chevron-down"/></svg>
+        </button>
+        <div class="faq-a"><p>You can call anytime we're open! Calling ahead is always appreciated and helps us get your order ready faster, but walk-in pickup orders are always welcome. We'll give you an accurate wait time when you call.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Is Sammies Pizza carry-out only?
+          <svg><use href="#i-chevron-down"/></svg>
+        </button>
+        <div class="faq-a"><p>Yes, we're carry-out only. It's how we keep our focus on what matters most — making your food as fresh and delicious as possible. Just call your order in and swing by to pick it up hot and ready.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          What sizes of pizza do you offer?
+          <svg><use href="#i-chevron-down"/></svg>
+        </button>
+        <div class="faq-a"><p>We offer three sizes: 10-inch (great for 1–2 people), 12-inch (feeds 2–3), and 16-inch (perfect for families or groups). We recommend calling us at (937) 549-0003 for current pricing on each size.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Can I customize my pizza with specific toppings?
+          <svg><use href="#i-chevron-down"/></svg>
+        </button>
+        <div class="faq-a"><p>Absolutely! We love building custom pizzas. You can mix and match toppings to create exactly what you want. Just let us know when you call and Sammie or a team member will walk you through all the available options.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          How long does an order usually take?
+          <svg><use href="#i-chevron-down"/></svg>
+        </button>
+        <div class="faq-a"><p>Most orders are ready within 15–25 minutes. We'll always give you an accurate estimate when you call. For large or complex orders, calling a little ahead is a great idea so we have everything fresh and hot when you arrive.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          What payment methods do you accept?
+          <svg><use href="#i-chevron-down"/></svg>
+        </button>
+        <div class="faq-a"><p>We accept cash and major credit and debit cards. Give us a call at (937) 549-0003 if you have any questions about payment before your visit.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Do you offer any specials or deals?
+          <svg><use href="#i-chevron-down"/></svg>
+        </button>
+        <div class="faq-a"><p>We occasionally run specials and new menu items — Sammie loves experimenting and surprising loyal customers! The best way to stay in the loop is to call us or follow our Facebook page for the latest updates.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <h2 class="reveal">Ready to Order?</h2>
+  <div class="cta-phone reveal"><a href="tel:9375490003" style="color:#fff;">(937) 549-0003</a></div>
+  <p class="cta-sub reveal">Mon – Sat &nbsp;·&nbsp; 4:00 PM – 9:00 PM &nbsp;·&nbsp; Carry-Out Only</p>
+  <a href="tel:9375490003" class="btn-white reveal">
+    <svg><use href="#i-phone"/></svg>
+    Call Now
+  </a>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div>
+        <p class="section-eyebrow reveal">Find Us</p>
+        <h2 class="section-title light reveal">Hours &amp; Location</h2>
+
+        <table class="hours-table reveal">
+          <tbody>
+            <tr><td class="day-col">Monday</td><td class="time-col">4:00 PM – 9:00 PM</td></tr>
+            <tr><td class="day-col">Tuesday</td><td class="time-col">4:00 PM – 9:00 PM</td></tr>
+            <tr><td class="day-col">Wednesday</td><td class="time-col">4:00 PM – 9:00 PM</td></tr>
+            <tr><td class="day-col">Thursday</td><td class="time-col">4:00 PM – 9:00 PM</td></tr>
+            <tr><td class="day-col">Friday</td><td class="time-col">4:00 PM – 9:00 PM</td></tr>
+            <tr><td class="day-col">Saturday</td><td class="time-col">4:00 PM – 9:00 PM</td></tr>
+            <tr><td class="day-col">Sunday</td><td class="time-col" style="color:rgba(255,255,255,.35);">Closed</td></tr>
+          </tbody>
+        </table>
+
+        <div class="contact-info-block reveal">
+          <div class="cib-row">
+            <svg><use href="#i-phone"/></svg>
+            <span><a href="tel:9375490003" style="color:rgba(255,255,255,.7);">(937) 549-0003</a></span>
+          </div>
+          <div class="cib-row">
+            <svg><use href="#i-pin"/></svg>
+            <span>403 Jack Roush Way, Manchester, OH 45144</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="callback-form reveal">
+        <div class="form-title">Send Us a Message</div>
+        <form onsubmit="handleForm(event)">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="fname">Your Name</label>
+              <input type="text" id="fname" placeholder="Jane Smith" />
+            </div>
+            <div class="form-group">
+              <label for="fphone">Phone Number</label>
+              <input type="tel" id="fphone" placeholder="(937) 000-0000" />
+            </div>
+            <div class="form-group full">
+              <label for="fmessage">Message</label>
+              <textarea id="fmessage" placeholder="Questions, large orders, feedback..."></textarea>
+            </div>
+          </div>
+          <button type="submit" class="form-submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Sammies Pizza</div>
+        <p class="footer-brand-tag">Serving Manchester, Ohio with fresh, hand-crafted pizza since we opened our doors. Family-owned. Community-loved.</p>
+        <div class="footer-stars" style="margin-top:1rem;">
+          <svg><use href="#i-star"/></svg>
+          <svg><use href="#i-star"/></svg>
+          <svg><use href="#i-star"/></svg>
+          <svg><use href="#i-star"/></svg>
+          <svg><use href="#i-star"/></svg>
+          <span>5.0 Stars on Google</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Menu</div>
+        <ul>
+          <li><a href="#menu">Pizzas</a></li>
+          <li><a href="#menu">Subs</a></li>
+          <li><a href="#menu">Sides &amp; Desserts</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Info</div>
+        <ul>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="tel:9375490003">(937) 549-0003</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2025 Sammies Pizza · 403 Jack Roush Way, Manchester, OH 45144 · Carry-Out Only</div>
+      <div class="footer-copy">Mon–Sat 4:00–9:00 PM</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal, .rl, .rr').forEach(el => observer.observe(el));
+
+  // Animated counters
+  document.querySelectorAll('[data-count]').forEach(el => {
+    const target = +el.dataset.count;
+    let cur = 0;
+    const step = target / 30;
+    const timer = setInterval(() => {
+      cur = Math.min(cur + step, target);
+      el.textContent = Math.round(cur);
+      if (cur >= target) clearInterval(timer);
+    }, 40);
+  });
+
+  // Menu tabs
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Highlight today's hours
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const today = days[new Date().getDay()];
+  document.querySelectorAll('.hours-table td.day-col').forEach(td => {
+    if (td.textContent.trim() === today) td.closest('tr').classList.add('today');
+  });
+
+  // Form handler
+  function handleForm(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = 'Message Sent! We\'ll be in touch soon.';
+    btn.style.background = '#2a7a2a';
+    btn.disabled = true;
+  }
+</script>
+</body>
+</html>
