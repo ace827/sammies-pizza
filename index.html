@@ -530,9 +530,226 @@
     .review-text { font-size: .9rem; color: rgba(255,255,255,.7); line-height: 1.65; margin-bottom: 1rem; font-style: italic; }
     .review-author { font-size: .78rem; color: rgba(255,255,255,.4); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
 
+    /* ── HOW TO ORDER ── */
+    .how-section { background: var(--warm); }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .step-card {
+      text-align: center;
+      padding: 2.5rem 2rem;
+      background: var(--white);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 900;
+      color: var(--border);
+      line-height: 1;
+      margin-bottom: .5rem;
+    }
+    .step-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.2rem;
+    }
+    .step-icon svg { width: 24px; height: 24px; color: #fff; }
+    .step-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: .6rem;
+    }
+    .step-desc { font-size: .88rem; color: var(--mid); line-height: 1.65; }
+    .step-connector {
+      position: absolute;
+      top: 50%;
+      right: -1.5rem;
+      transform: translateY(-50%);
+      width: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-connector svg { width: 20px; height: 20px; color: var(--red); opacity: .4; }
+
+    /* ── WHY SAMMIES ── */
+    .why-section { background: var(--ink2); }
+    .why-section .section-eyebrow { color: var(--gold); }
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .compare-card {
+      border-radius: 8px;
+      padding: 2rem;
+    }
+    .compare-card.chain {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .compare-card.sammies {
+      background: var(--red);
+      border: 1px solid var(--red3);
+    }
+    .compare-label {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      padding-bottom: .8rem;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .compare-card.chain .compare-label { color: rgba(255,255,255,.4); }
+    .compare-card.sammies .compare-label { color: rgba(255,255,255,.7); }
+    .compare-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1.5rem;
+    }
+    .compare-list { list-style: none; display: flex; flex-direction: column; gap: .85rem; }
+    .compare-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: .65rem;
+      font-size: .88rem;
+      line-height: 1.5;
+    }
+    .compare-card.chain .compare-list li { color: rgba(255,255,255,.5); }
+    .compare-card.sammies .compare-list li { color: rgba(255,255,255,.9); }
+    .cmp-icon { width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px; }
+    .cmp-icon.bad { color: rgba(255,255,255,.25); }
+    .cmp-icon.good { color: rgba(255,255,255,.9); }
+
+    /* ── SERVICE AREA ── */
+    .area-section { background: var(--cream); }
+    .area-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .area-map-card {
+      background: var(--ink);
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .area-map-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=800&q=80');
+      background-size: cover;
+      background-position: center;
+      opacity: .3;
+    }
+    .area-map-overlay {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2rem;
+    }
+    .area-map-pin {
+      width: 56px;
+      height: 56px;
+      background: var(--red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      box-shadow: 0 0 0 12px rgba(158,42,28,.2);
+    }
+    .area-map-pin svg { width: 28px; height: 28px; color: #fff; }
+    .area-map-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: .3rem;
+    }
+    .area-map-sub { font-size: .8rem; color: rgba(255,255,255,.6); }
+    .area-towns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .75rem;
+    }
+    .area-town {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: .9rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .area-town-name { font-size: .88rem; font-weight: 600; color: var(--ink); }
+    .area-town-time { font-size: .75rem; color: var(--mid); background: var(--card); padding: .2rem .5rem; border-radius: 2px; }
+
+    /* ── LARGE ORDERS ── */
+    .catering-section { background: var(--warm); }
+    .catering-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .catering-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background-image: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=85');
+      background-size: cover;
+      background-position: center;
+      border-radius: 8px;
+    }
+    .catering-features { display: flex; flex-direction: column; gap: 1.25rem; margin: 1.5rem 0 2rem; }
+    .catering-feat {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem;
+      background: var(--white);
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+    .catering-feat-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--red);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .catering-feat-icon svg { width: 18px; height: 18px; color: #fff; }
+    .catering-feat-title { font-size: .9rem; font-weight: 700; color: var(--ink); margin-bottom: .2rem; }
+    .catering-feat-desc { font-size: .82rem; color: var(--mid); line-height: 1.55; }
+
     /* ── FAQ ── */
     .faq-section { background: var(--cream); }
-    .faq-list { max-width: 720px; }
+    .faq-list { max-width: 720px; margin: 0 auto; }
     .faq-item { border-bottom: 1px solid var(--border); }
     .faq-q {
       width: 100%;
@@ -762,6 +979,11 @@
       .form-grid { grid-template-columns: 1fr; }
       .hero-content { padding: 4rem 1rem 3rem; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps-grid { grid-template-columns: 1fr; }
+      .step-connector { display: none; }
+      .compare-grid { grid-template-columns: 1fr; }
+      .area-grid { grid-template-columns: 1fr; }
+      .catering-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -805,6 +1027,18 @@
   <symbol id="i-sandwich" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M3 11v3a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-3"/><path d="M12 19H4a1 1 0 0 1-1-1v-2h14v2a1 1 0 0 1-1 1Z"/><path d="M20 11V8a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v3"/><path d="M12 5v6"/><path d="M3 11h18"/>
   </symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+  </symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+  </symbol>
+  <symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+  </symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+  </symbol>
 </svg>
 
 <!-- TOP BAR -->
@@ -839,6 +1073,7 @@
   <div class="nav-links">
     <a href="#menu">Menu</a>
     <a href="#about">Our Story</a>
+    <a href="#catering">Large Orders</a>
     <a href="#reviews">Reviews</a>
     <a href="#contact">Contact</a>
   </div>
@@ -1236,11 +1471,158 @@
   </div>
 </section>
 
+<!-- HOW TO ORDER -->
+<section class="how-section" id="how">
+  <div class="section-inner">
+    <p class="section-eyebrow reveal">Simple &amp; Easy</p>
+    <h2 class="section-title reveal">How to Order</h2>
+    <p class="section-lead reveal">No apps, no fuss. Just call, and we'll have your food hot and ready in minutes.</p>
+    <div class="steps-grid">
+      <div class="step-card reveal" style="position:relative;">
+        <div class="step-icon"><svg><use href="#i-phone"/></svg></div>
+        <div class="step-num">01</div>
+        <div class="step-title">Call Us</div>
+        <p class="step-desc">Pick up the phone and dial <a href="tel:9375490003" style="color:var(--red);font-weight:600;">(937) 549-0003</a>. We're available Mon–Sat from 4:00–9:00 PM. Tell us exactly what you want — we'll walk you through the full menu if you need help.</p>
+        <div class="step-connector"><svg><use href="#i-arrow"/></svg></div>
+      </div>
+      <div class="step-card reveal d1" style="position:relative;">
+        <div class="step-icon"><svg><use href="#i-pizza"/></svg></div>
+        <div class="step-num">02</div>
+        <div class="step-title">We Make It Fresh</div>
+        <p class="step-desc">Your order goes straight to the kitchen — made from scratch with fresh ingredients. No pre-made pies sitting around. Most orders are ready in 15–25 minutes. We'll confirm your pickup time on the call.</p>
+        <div class="step-connector"><svg><use href="#i-arrow"/></svg></div>
+      </div>
+      <div class="step-card reveal d2">
+        <div class="step-icon"><svg><use href="#i-box"/></svg></div>
+        <div class="step-num">03</div>
+        <div class="step-title">Pick It Up Hot</div>
+        <p class="step-desc">Swing by 403 Jack Roush Way and pick up your order at the counter. It'll be fresh, hot, and exactly as ordered. We accept cash and all major cards.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SAMMIES -->
+<section class="why-section">
+  <div class="section-inner">
+    <p class="section-eyebrow reveal">The Difference Is Real</p>
+    <h2 class="section-title light reveal">Why Sammies Beats the Chains</h2>
+    <p class="section-lead light reveal">When you order from a chain, you get a system. When you order from Sammies, you get a person who cares.</p>
+    <div class="compare-grid">
+      <div class="compare-card chain reveal">
+        <div class="compare-label">Chain &amp; Franchise Pizza</div>
+        <div class="compare-title">What You Usually Get</div>
+        <ul class="compare-list">
+          <li><svg class="cmp-icon bad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Pre-made dough and sauces from a factory</li>
+          <li><svg class="cmp-icon bad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Toppings measured to a corporate standard</li>
+          <li><svg class="cmp-icon bad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Staff following a script, not a recipe</li>
+          <li><svg class="cmp-icon bad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Your money leaves Manchester</li>
+          <li><svg class="cmp-icon bad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Nobody knows your name or your usual order</li>
+        </ul>
+      </div>
+      <div class="compare-card sammies reveal d1">
+        <div class="compare-label">Sammies Pizza · Manchester, OH</div>
+        <div class="compare-title">What You Actually Get</div>
+        <ul class="compare-list">
+          <li><svg class="cmp-icon good" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Every pizza made fresh to order, every time</li>
+          <li><svg class="cmp-icon good" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Real toppings, real portions, no shortcuts</li>
+          <li><svg class="cmp-icon good" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Sammie and her team put their name on every box</li>
+          <li><svg class="cmp-icon good" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Your dollars stay in the community</li>
+          <li><svg class="cmp-icon good" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> A neighborhood spot that actually knows its regulars</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section class="area-section">
+  <div class="section-inner">
+    <p class="section-eyebrow reveal">We're Right Here</p>
+    <h2 class="section-title reveal">Serving Manchester &amp; the Surrounding Area</h2>
+    <p class="section-lead reveal">Located right in the heart of Manchester — easy to reach from across Adams County and beyond.</p>
+    <div class="area-grid">
+      <div class="reveal">
+        <div class="area-map-card">
+          <div class="area-map-bg"></div>
+          <div class="area-map-overlay">
+            <div class="area-map-pin"><svg><use href="#i-pin"/></svg></div>
+            <div class="area-map-text">Sammies Pizza</div>
+            <div class="area-map-sub">403 Jack Roush Way · Manchester, OH 45144</div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal d1">
+        <p style="font-size:.88rem;color:var(--mid);margin-bottom:1.25rem;line-height:1.7;">Customers drive from all over Adams County — and beyond — because the pizza is worth it. Here's roughly how far we are from nearby towns:</p>
+        <div class="area-towns">
+          <div class="area-town"><span class="area-town-name">Manchester</span><span class="area-town-time">Right here</span></div>
+          <div class="area-town"><span class="area-town-name">Ripley</span><span class="area-town-time">~15 min</span></div>
+          <div class="area-town"><span class="area-town-name">Aberdeen</span><span class="area-town-time">~20 min</span></div>
+          <div class="area-town"><span class="area-town-name">West Union</span><span class="area-town-time">~25 min</span></div>
+          <div class="area-town"><span class="area-town-name">Peebles</span><span class="area-town-time">~20 min</span></div>
+          <div class="area-town"><span class="area-town-name">Seaman</span><span class="area-town-time">~18 min</span></div>
+          <div class="area-town"><span class="area-town-name">Russellville</span><span class="area-town-time">~12 min</span></div>
+          <div class="area-town"><span class="area-town-name">Georgetown</span><span class="area-town-time">~30 min</span></div>
+        </div>
+        <a href="https://maps.google.com/?q=403+Jack+Roush+Way+Manchester+OH+45144" target="_blank" rel="noopener" class="btn-primary" style="display:inline-flex;margin-top:1.5rem;">
+          <svg><use href="#i-pin"/></svg>
+          Get Directions
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LARGE ORDERS -->
+<section class="catering-section" id="catering">
+  <div class="section-inner">
+    <div class="catering-grid">
+      <div class="rl">
+        <div class="catering-img"></div>
+      </div>
+      <div class="rr">
+        <p class="section-eyebrow">Feeding a Crowd?</p>
+        <h2 class="section-title">Large Orders &amp; Group Pickups</h2>
+        <p style="color:var(--mid);font-size:.95rem;line-height:1.8;margin-bottom:.5rem;">
+          Whether it's a family night, a work lunch, a team party, or a community event — Sammies can handle it. We ask that you call ahead for large orders so we can make sure everything comes out hot, fresh, and on time.
+        </p>
+        <div class="catering-features">
+          <div class="catering-feat">
+            <div class="catering-feat-icon"><svg><use href="#i-users"/></svg></div>
+            <div>
+              <div class="catering-feat-title">Feeds 5 to 50</div>
+              <div class="catering-feat-desc">Order multiple pies, subs, sides, and cookies all at once. We'll batch everything together so you pick up in one trip.</div>
+            </div>
+          </div>
+          <div class="catering-feat">
+            <div class="catering-feat-icon"><svg><use href="#i-calendar"/></svg></div>
+            <div>
+              <div class="catering-feat-title">Call Ahead for Big Groups</div>
+              <div class="catering-feat-desc">For orders of 5+ pizzas, give us a heads-up so we can have everything ready at your preferred time. Just call (937) 549-0003.</div>
+            </div>
+          </div>
+          <div class="catering-feat">
+            <div class="catering-feat-icon"><svg><use href="#i-cookie"/></svg></div>
+            <div>
+              <div class="catering-feat-title">Don't Forget the Cookie</div>
+              <div class="catering-feat-desc">Our 10-inch chocolate chip cookie is a crowd-pleaser. Order a few — they go fast at parties and events.</div>
+            </div>
+          </div>
+        </div>
+        <a href="tel:9375490003" class="btn-primary" style="display:inline-flex;">
+          <svg><use href="#i-phone"/></svg>
+          Call to Discuss Your Order
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="faq-section" id="faq">
   <div class="section-inner">
-    <p class="section-eyebrow reveal">Got Questions?</p>
-    <h2 class="section-title reveal">Frequently Asked Questions</h2>
+    <p class="section-eyebrow reveal" style="text-align:center;">Got Questions?</p>
+    <h2 class="section-title reveal" style="text-align:center;">Frequently Asked Questions</h2>
     <div class="faq-list reveal">
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
