@@ -283,6 +283,7 @@
     .menu-item-price { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--red); white-space: nowrap; flex-shrink: 0; }
     .menu-note { background: var(--warm); border: 1px solid var(--border); border-radius: 6px; padding: 1rem 1.2rem; font-size: .85rem; color: var(--mid); line-height: 1.7; margin-bottom: 1.5rem; }
     .menu-note strong { color: var(--dark); }
+    .menu-item-sizes { font-size:.82rem; color:var(--mid); margin-top:.35rem; }
     .pizza-size-table { margin-bottom:1.5rem; overflow-x:auto; }
     .pizza-size-table table { width:100%; border-collapse:collapse; font-size:.93rem; }
     .pizza-size-table th { background:var(--red); color:#fff; padding:.6rem 1rem; text-align:left; font-weight:600; letter-spacing:.03em; }
@@ -652,159 +653,192 @@
 
     <div class="menu-tabs">
       <button class="tab-btn active" data-tab="pizza">Pizza</button>
+      <button class="tab-btn" data-tab="specialty">Specialty</button>
       <button class="tab-btn" data-tab="sides">Sides &amp; Apps</button>
       <button class="tab-btn" data-tab="sandwiches">Sandwiches</button>
       <button class="tab-btn" data-tab="pasta">Pasta</button>
-      <button class="tab-btn" data-tab="calzones">Calzones &amp; More</button>
+      <button class="tab-btn" data-tab="calzones">Calzones</button>
       <button class="tab-btn" data-tab="salads">Salads</button>
-      <button class="tab-btn" data-tab="drinks">Drinks</button>
     </div>
 
     <!-- PIZZA -->
     <div class="menu-panel active" id="tab-pizza">
-      <div class="menu-category-title">Build Your Own Pizza</div>
-      <div class="menu-note" style="margin-bottom:1rem;">All pizzas come with sauce &amp; cheese. Add any toppings below.</div>
+      <div class="menu-category-title">Cheese Pizza</div>
       <div class="pizza-size-table">
         <table>
           <thead>
-            <tr><th>Size</th><th>Cheese Only</th><th>Per Topping</th></tr>
+            <tr><th>Size</th><th>Cheese</th><th>+ Each Topping</th><th>Deluxe</th></tr>
           </thead>
           <tbody>
-            <tr><td><strong>10"</strong> (Small)</td><td>$8.50</td><td>$0.75</td></tr>
-            <tr><td><strong>12"</strong> (Medium)</td><td>$10.50</td><td>$1.00</td></tr>
-            <tr><td><strong>16"</strong> (Large)</td><td>$13.50</td><td>$1.25</td></tr>
-            <tr><td><strong>19"</strong> (X-Large)</td><td>$16.50</td><td>$1.50</td></tr>
+            <tr><td><strong>10"</strong></td><td>$8.00</td><td>$1.00</td><td>$16.00</td></tr>
+            <tr><td><strong>12"</strong></td><td>$11.50</td><td>$1.25</td><td>$21.00</td></tr>
+            <tr><td><strong>16"</strong></td><td>$15.00</td><td>$1.75</td><td>$25.00</td></tr>
+            <tr><td><strong>19"</strong></td><td>$20.00</td><td>$2.00</td><td>$29.00</td></tr>
           </tbody>
         </table>
       </div>
-      <div class="menu-note" style="margin-top:0.75rem;"><strong>Toppings:</strong> Pepperoni &middot; Sausage &middot; Ham &middot; Bacon &middot; Ground Beef &middot; Chicken &middot; Steak &middot; Anchovies &middot; Meatballs &middot; Mushrooms &middot; Green Peppers &middot; Black Olives &middot; Onions &middot; Tomatoes &middot; Banana Peppers &middot; Jalape&ntilde;os &middot; Pineapple &middot; Spinach &middot; Artichoke &middot; Extra Cheese &middot; Alfredo Sauce (add $1.00)</div>
+      <div class="menu-note"><strong>Toppings:</strong> Pepperoni &middot; Sausage &middot; Mushrooms &middot; Extra Cheese &middot; Ham &middot; Bacon &middot; Black Olives &middot; Green Olives &middot; Banana Peppers &middot; Onions &middot; Green Peppers &middot; Jalape&ntilde;os &middot; Pineapple &middot; Chicken &middot; Thick Crust<br/><strong>Sauce option:</strong> Substitute ranch instead of pizza sauce.</div>
+    </div>
 
-      <div class="menu-category-title" style="margin-top:2rem;">Specialty Pizzas</div>
-      <div class="menu-note" style="margin-bottom:1rem;">Available in all sizes. Prices shown for Large (16"). Ask for pricing on other sizes.</div>
+    <!-- SPECIALTY PIZZAS -->
+    <div class="menu-panel" id="tab-specialty">
+      <div class="menu-category-title">Specialty Pizzas</div>
       <div class="menu-list">
-        <div class="menu-item"><div><div class="menu-item-name">Deluxe</div><div class="menu-item-desc">Pepperoni, sausage, ham, mushrooms, green peppers, onions, black olives</div></div><div class="menu-item-price">$19.75</div></div>
-        <div class="menu-item"><div><div class="menu-item-name">Hawaiian</div><div class="menu-item-desc">Ham &amp; pineapple</div></div><div class="menu-item-price">$15.75</div></div>
-        <div class="menu-item"><div><div class="menu-item-name">Veggie</div><div class="menu-item-desc">Mushrooms, green peppers, onions, tomatoes, black olives, spinach</div></div><div class="menu-item-price">$21.00</div></div>
-        <div class="menu-item"><div><div class="menu-item-name">All Meat</div><div class="menu-item-desc">Pepperoni, sausage, ham, bacon, ground beef</div></div><div class="menu-item-price">$21.75</div></div>
-        <div class="menu-item"><div><div class="menu-item-name">Chicken Bacon Ranch</div><div class="menu-item-desc">Chicken, bacon, ranch sauce, cheese</div></div><div class="menu-item-price">$21.75</div></div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Deluxe</div>
+            <div class="menu-item-desc">All available toppings except jalape&ntilde;os, chicken, and pineapple</div>
+            <div class="menu-item-sizes">10" $16.00 &nbsp;&middot;&nbsp; 12" $21.00 &nbsp;&middot;&nbsp; 16" $25.00 &nbsp;&middot;&nbsp; 19" $29.00</div>
+          </div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Hawaiian</div>
+            <div class="menu-item-desc">Ham, pineapple, and bacon</div>
+            <div class="menu-item-sizes">10" $11.00 &nbsp;&middot;&nbsp; 12" $15.25 &nbsp;&middot;&nbsp; 16" $20.25 &nbsp;&middot;&nbsp; 19" $26.00</div>
+          </div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Veggie</div>
+            <div class="menu-item-desc">Mushrooms, banana peppers, green olives, black olives, green peppers, and onions</div>
+            <div class="menu-item-sizes">10" $14.00 &nbsp;&middot;&nbsp; 12" $18.25 &nbsp;&middot;&nbsp; 16" $23.25 &nbsp;&middot;&nbsp; 19" $28.25</div>
+          </div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">All Meat</div>
+            <div class="menu-item-desc">Pepperoni, sausage, ham, and bacon</div>
+            <div class="menu-item-sizes">10" $12.00 &nbsp;&middot;&nbsp; 12" $16.50 &nbsp;&middot;&nbsp; 16" $22.00 &nbsp;&middot;&nbsp; 19" $28.00</div>
+          </div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Chicken Bacon Ranch</div>
+            <div class="menu-item-desc">No pizza sauce. Ranch, crispy chicken, bacon, and cheese</div>
+            <div class="menu-item-sizes">10" $11.50 &nbsp;&middot;&nbsp; 12" $16.50 &nbsp;&middot;&nbsp; 16" $22.00 &nbsp;&middot;&nbsp; 19" $28.00</div>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- SIDES & APPS -->
     <div class="menu-panel" id="tab-sides">
       <div class="menu-category-title">Cheese Sticks</div>
+      <div class="menu-note" style="margin-bottom:.75rem;">Flat like a pizza, served with pizza sauce.</div>
       <div class="pizza-size-table">
         <table>
-          <thead>
-            <tr><th>Size</th><th>Price</th></tr>
-          </thead>
+          <thead><tr><th>Size</th><th>Price</th></tr></thead>
           <tbody>
-            <tr><td>Small (10")</td><td>$8.50</td></tr>
-            <tr><td>Medium (12")</td><td>$10.50</td></tr>
-            <tr><td>Large (16")</td><td>$13.50</td></tr>
-            <tr><td>X-Large (19")</td><td>$16.50</td></tr>
+            <tr><td>10"</td><td>$9.25</td></tr>
+            <tr><td>12"</td><td>$12.50</td></tr>
+            <tr><td>16"</td><td>$17.00</td></tr>
+            <tr><td>19"</td><td>$22.00</td></tr>
           </tbody>
         </table>
       </div>
 
       <div class="menu-category-title" style="margin-top:1.5rem;">Pizza Balls</div>
-      <div class="menu-list">
-        <div class="menu-item"><div><div class="menu-item-name">Pizza Balls (6-piece)</div><div class="menu-item-desc">Pepperoni &amp; cheese stuffed dough balls, served with sauce</div></div><div class="menu-item-price">$5.25</div></div>
-        <div class="menu-item"><div><div class="menu-item-name">Pizza Balls (12-piece)</div><div class="menu-item-desc">Pepperoni &amp; cheese stuffed dough balls, served with sauce</div></div><div class="menu-item-price">$9.50</div></div>
+      <div class="menu-note" style="margin-bottom:.75rem;">Served with pizza sauce. Substitute any topping for pepperoni.</div>
+      <div class="pizza-size-table">
+        <table>
+          <thead><tr><th>Type</th><th>6-piece</th><th>12-piece</th></tr></thead>
+          <tbody>
+            <tr><td>Cheese</td><td>$8.50</td><td>$13.75</td></tr>
+            <tr><td>Pepperoni</td><td>$8.50</td><td>$13.75</td></tr>
+            <tr><td>Pepperoni &amp; Cheese</td><td>$9.00</td><td>$14.50</td></tr>
+          </tbody>
+        </table>
       </div>
 
       <div class="menu-category-title" style="margin-top:1.5rem;">Wings</div>
+      <div class="menu-note" style="margin-bottom:.75rem;">Bone-in wings only. No minimum order.</div>
       <div class="menu-list">
-        <div class="menu-item"><div><div class="menu-item-name">Wings</div><div class="menu-item-desc">$1.25 each &middot; Minimum order of 6 &middot; Choose your sauce</div></div><div class="menu-item-price">$1.25 ea.</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Regular Wings</div><div class="menu-item-desc">Choose your flavor below</div></div><div class="menu-item-price">$1.25 ea.</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Jumbo Wings</div><div class="menu-item-desc">Choose your flavor below</div></div><div class="menu-item-price">$1.50 ea.</div></div>
       </div>
-      <div class="menu-note"><strong>Wing Sauces:</strong> Mild &middot; Medium &middot; Hot &middot; Extra Hot &middot; BBQ &middot; Honey BBQ &middot; Teriyaki &middot; Garlic Parmesan &middot; Lemon Pepper &middot; Dry Rub</div>
+      <div class="menu-note"><strong>Flavors:</strong> Plain &middot; Garlic Parmesan &middot; Hot Buffalo &middot; Mild Buffalo &middot; Sweet &amp; Bold BBQ &middot; Sweet Baby Ray's Honey BBQ</div>
 
       <div class="menu-category-title" style="margin-top:1.5rem;">Chicken Tenders</div>
       <div class="menu-list">
-        <div class="menu-item"><div><div class="menu-item-name">3-Piece Chicken Tenders</div><div class="menu-item-desc">Three crispy chicken tenders</div></div><div class="menu-item-price">$4.50</div></div>
-        <div class="menu-item"><div><div class="menu-item-name">Chicken Tenders Combo</div><div class="menu-item-desc">3-piece tenders + tater tots or wedges &amp; can of pop</div></div><div class="menu-item-price">$8.75</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">3-Piece Chicken Tenders</div></div><div class="menu-item-price">$4.50</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">3-Piece with a Side</div><div class="menu-item-desc">Choice of tater tots, fries, or potato wedges</div></div><div class="menu-item-price">$7.75</div></div>
       </div>
 
-      <div class="menu-category-title" style="margin-top:1.5rem;">Tater Tots &amp; Wedges</div>
-      <div class="menu-list">
-        <div class="menu-item"><div><div class="menu-item-name">Plain</div><div class="menu-item-desc">Regular or small order of tater tots or potato wedges</div></div><div class="menu-item-price">Sm / Reg</div></div>
-        <div class="menu-item"><div><div class="menu-item-name">Cheesy</div><div class="menu-item-desc">Tots or wedges topped with melted cheese</div></div><div class="menu-item-price">Sm / Reg</div></div>
-        <div class="menu-item"><div><div class="menu-item-name">Loaded</div><div class="menu-item-desc">Tots or wedges with cheese, bacon, sour cream &amp; chives</div></div><div class="menu-item-price">Sm / Reg</div></div>
+      <div class="menu-category-title" style="margin-top:1.5rem;">Tater Tots, Fries &amp; Potato Wedges</div>
+      <div class="menu-note" style="margin-bottom:.75rem;">Tater tots, fries, and potato wedges available at the same prices.</div>
+      <div class="pizza-size-table">
+        <table>
+          <thead><tr><th>Style</th><th>Small</th><th>Large</th></tr></thead>
+          <tbody>
+            <tr><td>Plain</td><td>$3.75</td><td>$5.00</td></tr>
+            <tr><td>Cheesy</td><td>$4.25</td><td>$5.50</td></tr>
+            <tr><td>Loaded with Cheese &amp; Bacon</td><td>$5.00</td><td>$6.50</td></tr>
+          </tbody>
+        </table>
       </div>
 
-      <div class="menu-category-title" style="margin-top:1.5rem;">Kylie Sampler</div>
-      <div class="menu-note"><strong>Kylie Sampler - $11.00</strong><br/>Includes: small pepperoni/cheese calzone &middot; regular order of tots/wedges &middot; two pepperoni/cheese balls &middot; can of pop</div>
-
-      <div class="menu-category-title" style="margin-top:1.5rem;">Desserts</div>
-      <div class="menu-list">
-        <div class="menu-item"><div><div class="menu-item-name">Chocolate Chip Cookie</div><div class="menu-item-desc">Fresh-baked large chocolate chip cookie</div></div><div class="menu-item-price">$4.95</div></div>
-      </div>
+      <div class="menu-category-title" style="margin-top:1.5rem;">Kylie Sampler — $11.00</div>
+      <div class="menu-note">Includes: mini calzone with one topping &middot; small order of tater tots, fries, or potato wedges &middot; two pepperoni &amp; cheese pizza balls &middot; pizza sauce</div>
     </div>
 
     <!-- SANDWICHES -->
     <div class="menu-panel" id="tab-sandwiches">
       <div class="menu-category-title">Sandwiches</div>
       <div class="menu-list">
-        <div class="menu-item"><div><div class="menu-item-name">Stromboli</div><div class="menu-item-desc">Steak patty, pizza sauce, cheese, onions</div></div><div class="menu-item-price">$8.00</div></div>
-        <div class="menu-item"><div><div class="menu-item-name">Steak</div><div class="menu-item-desc">Steak patty, pizza sauce, cheese, onion, mayo, lettuce, tomato</div></div><div class="menu-item-price">$8.50</div></div>
-        <div class="menu-item"><div><div class="menu-item-name">Italian Sub</div><div class="menu-item-desc">Salami, ham, cheese, onion, mayo, lettuce, tomato, sub sauce</div></div><div class="menu-item-price">$8.50</div></div>
-        <div class="menu-item"><div><div class="menu-item-name">Ham &amp; Cheese</div><div class="menu-item-desc">Ham, cheese, lettuce, tomato, onion, mayo</div></div><div class="menu-item-price">$8.00</div></div>
-        <div class="menu-item"><div><div class="menu-item-name">Mushroom Steak</div><div class="menu-item-desc">Steak patty, mushroom gravy, mushrooms, onions, cheese</div></div><div class="menu-item-price">$8.00</div></div>
-        <div class="menu-item"><div><div class="menu-item-name">Meatball Sub</div><div class="menu-item-desc">Meatballs, sauce, cheese</div></div><div class="menu-item-price">$8.00</div></div>
-        <div class="menu-item"><div><div class="menu-item-name">Chicken Bacon Ranch</div><div class="menu-item-desc">Crispy chicken, cheese, bacon, ranch</div></div><div class="menu-item-price">$8.50</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Stromboli</div><div class="menu-item-desc">Steak patty, pizza sauce, cheese, and onions</div></div><div class="menu-item-price">$8.00</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Steak</div><div class="menu-item-desc">Steak patty, pizza sauce, cheese, onion, mayonnaise, lettuce, and tomato</div></div><div class="menu-item-price">$8.50</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Italian Sub</div><div class="menu-item-desc">Salami, ham, cheese, onion, mayonnaise, lettuce, tomato, and sub sauce</div></div><div class="menu-item-price">$8.50</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Ham &amp; Cheese</div><div class="menu-item-desc">Ham, cheese, lettuce, tomato, onion, and mayonnaise</div></div><div class="menu-item-price">$8.00</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Mushroom Steak</div><div class="menu-item-desc">Steak patty, mushroom gravy, mushrooms, onions, and cheese</div></div><div class="menu-item-price">$8.00</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Meatball Sub</div><div class="menu-item-desc">Meatballs, sauce, and cheese</div></div><div class="menu-item-price">$8.00</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Chicken Bacon Ranch</div><div class="menu-item-desc">Crispy chicken topped with cheese, bacon, and ranch</div></div><div class="menu-item-price">$8.50</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Philly Cheesesteak</div><div class="menu-item-desc">Meat, green peppers, onions, mushrooms, and mayonnaise</div></div><div class="menu-item-price">Call for price</div></div>
       </div>
 
-      <div class="menu-category-title" style="margin-top:1.5rem;">Pizza Bread Sandwich</div>
-      <div class="menu-note"><strong>Large bun with pizza sauce &amp; cheese - $4.99</strong><br/>Add toppings at $0.75 each &nbsp;|&nbsp; <strong>Open Face option:</strong> Toppings on both sides of bun - $1.50 per topping</div>
+      <div class="menu-category-title" style="margin-top:1.5rem;">Pizza Bread</div>
+      <div class="menu-note"><strong>Large bun with pizza sauce &amp; cheese &mdash; $4.99</strong><br/>Add toppings at $0.75 each &nbsp;&middot;&nbsp; Open-faced option: toppings on both sides of the bun at $1.50 per topping</div>
 
       <div class="menu-category-title" style="margin-top:1.5rem;">Pizza Burger</div>
       <div class="menu-list">
-        <div class="menu-item"><div><div class="menu-item-name">Pizza Burger</div><div class="menu-item-desc">Sauce, cheese, pepperoni &mdash; onion &amp; pickle optional</div></div><div class="menu-item-price">$5.50</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Pizza Burger</div><div class="menu-item-desc">Pizza sauce, cheese, pepperoni, onion, and pickle</div></div><div class="menu-item-price">$5.50</div></div>
       </div>
     </div>
 
     <!-- PASTA -->
     <div class="menu-panel" id="tab-pasta">
+      <div class="menu-note" style="margin-bottom:1.25rem;"><strong>Every pasta order comes with garlic bread.</strong> Deduct $0.50 when ordered without garlic bread.</div>
       <div class="menu-category-title">Pasta</div>
       <div class="menu-list">
-        <div class="menu-item"><div><div class="menu-item-name">Baked Spaghetti</div><div class="menu-item-desc">Large baked spaghetti with cheese &amp; garlic bread</div></div><div class="menu-item-price">$8.75</div></div>
-        <div class="menu-item"><div><div class="menu-item-name">Spaghetti</div><div class="menu-item-desc">Large spaghetti without cheese &amp; large garlic bread</div></div><div class="menu-item-price">$8.25</div></div>
-        <div class="menu-item"><div><div class="menu-item-name">Chicken Alfredo</div><div class="menu-item-desc">Chicken alfredo with fettuccine noodles &amp; large garlic bread</div></div><div class="menu-item-price">$9.75</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Large Baked Spaghetti with Cheese</div><div class="menu-item-desc">Served with garlic bread &nbsp;&middot;&nbsp; Without garlic bread: $8.25</div></div><div class="menu-item-price">$8.75</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Large Spaghetti Without Cheese</div><div class="menu-item-desc">Served with garlic bread &nbsp;&middot;&nbsp; Without garlic bread: $7.75</div></div><div class="menu-item-price">$8.25</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Chicken Alfredo with Fettuccine</div><div class="menu-item-desc">Served with garlic bread &nbsp;&middot;&nbsp; Without garlic bread: $9.25</div></div><div class="menu-item-price">$9.75</div></div>
       </div>
       <div class="menu-category-title" style="margin-top:1.5rem;">Garlic Bread</div>
       <div class="menu-list">
-        <div class="menu-item"><div><div class="menu-item-name">Garlic Bread Loaf</div><div class="menu-item-desc">Classic garlic bread loaf</div></div><div class="menu-item-price">$3.00</div></div>
-        <div class="menu-item"><div><div class="menu-item-name">Cheesy Garlic Bread</div><div class="menu-item-desc">Garlic bread loaf topped with melted cheese</div></div><div class="menu-item-price">$3.75</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Garlic Bread Loaf</div></div><div class="menu-item-price">$3.00</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Cheesy Garlic Bread</div></div><div class="menu-item-price">$3.75</div></div>
       </div>
     </div>
 
-    <!-- CALZONES & MORE -->
+    <!-- CALZONES -->
     <div class="menu-panel" id="tab-calzones">
       <div class="menu-category-title">Calzones</div>
       <div class="menu-list">
-        <div class="menu-item"><div><div class="menu-item-name">Cheese Only</div><div class="menu-item-desc">Classic calzone with cheese</div></div><div class="menu-item-price">$9.25</div></div>
-        <div class="menu-item"><div><div class="menu-item-name">Deluxe Calzone</div><div class="menu-item-desc">All toppings except jalape&ntilde;os and pineapple</div></div><div class="menu-item-price">$14.75</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Cheese Calzone</div><div class="menu-item-desc">Classic cheese calzone</div></div><div class="menu-item-price">$9.25</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Deluxe Calzone</div><div class="menu-item-desc">All toppings except jalape&ntilde;os, chicken, and pineapple</div></div><div class="menu-item-price">$14.75</div></div>
       </div>
-      <div class="menu-note"><strong>Build Your Own:</strong> Start with cheese at $9.25 &mdash; add toppings at $1.00 each. Chicken or alfredo sauce toppings $1.50 each.</div>
+      <div class="menu-note"><strong>Build Your Own:</strong> Start with cheese at $9.25 &mdash; add toppings at $1.00 each. Chicken and alfredo sauce $1.50 each.</div>
     </div>
 
     <!-- SALADS -->
     <div class="menu-panel" id="tab-salads">
+      <div class="menu-note" style="margin-bottom:1rem;">Each salad comes with one packet of dressing and two packs of crackers. Additional dressing packets $1.00 each.<br/><strong>Dressing choices:</strong> Ranch &middot; French &middot; Italian</div>
       <div class="menu-category-title">Salads</div>
       <div class="menu-list">
-        <div class="menu-item"><div><div class="menu-item-name">Garden Salad</div><div class="menu-item-desc">Fresh garden salad with your choice of dressing</div></div><div class="menu-item-price">$5.50</div></div>
-        <div class="menu-item"><div><div class="menu-item-name">Chef Salad</div><div class="menu-item-desc">Garden salad topped with ham, turkey, cheese &amp; egg</div></div><div class="menu-item-price">$7.50</div></div>
-        <div class="menu-item"><div><div class="menu-item-name">Antipasto Salad</div><div class="menu-item-desc">Garden salad with salami, pepperoni, ham, olives, pepperoncini &amp; cheese</div></div><div class="menu-item-price">$7.50</div></div>
-      </div>
-    </div>
-
-    <!-- DRINKS -->
-    <div class="menu-panel" id="tab-drinks">
-      <div class="menu-category-title">Drinks</div>
-      <div class="menu-list">
-        <div class="menu-item"><div><div class="menu-item-name">2 Liter</div><div class="menu-item-desc">Assorted 2-liter bottles</div></div><div class="menu-item-price">$3.50</div></div>
-        <div class="menu-item"><div><div class="menu-item-name">16 oz Bottle</div><div class="menu-item-desc">Assorted 16 oz bottled drinks</div></div><div class="menu-item-price">$1.50</div></div>
-        <div class="menu-item"><div><div class="menu-item-name">Can of Pop</div><div class="menu-item-desc">Assorted canned soft drinks</div></div><div class="menu-item-price">$1.00</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Garden Salad</div><div class="menu-item-desc">Lettuce, tomato, onion, cheese, and a light amount of bacon</div></div><div class="menu-item-price">$5.00</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Chef Salad</div><div class="menu-item-desc">Lettuce, ham, pepperoni, cheese, onion, tomato, and bacon</div></div><div class="menu-item-price">$7.50</div></div>
+        <div class="menu-item"><div><div class="menu-item-name">Antipasto Salad</div><div class="menu-item-desc">Pepperoni, sausage, tomato, mushrooms, ham, bacon, green olives, black olives, banana peppers, green peppers, onions, and cheese</div></div><div class="menu-item-price">$8.00</div></div>
       </div>
     </div>
 
