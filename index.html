@@ -203,9 +203,9 @@
     .topbar svg { width: 13px; height: 13px; opacity: .7; flex-shrink: 0; }
 
     /* NAV */
-    nav { position: sticky; top: 0; z-index: 100; background: rgba(16,12,10,.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,.07); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; height: 72px; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(16,12,10,.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,.07); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; height: 82px; }
     .nav-brand { display: flex; align-items: center; gap: .85rem; color: #fff; }
-    .nav-logo-img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; object-position: center; background: #fff; flex-shrink: 0; padding: 2px; border: 2px solid var(--gold); }
+    .nav-logo-img { width: 78px; height: 78px; border-radius: 50%; object-fit: cover; object-position: center; background: #fff; flex-shrink: 0; padding: 2px; border: 2px solid var(--gold); }
     .nav-name { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: #fff; line-height: 1.1; }
     .nav-city { font-size: .7rem; color: var(--gold); letter-spacing: .1em; text-transform: uppercase; font-weight: 500; }
     .nav-links { display: flex; align-items: center; gap: 1.8rem; }
@@ -216,7 +216,7 @@
     .nav-cta svg { width: 14px; height: 14px; }
 
     /* HERO */
-    .hero { position: relative; min-height: 92vh; display: flex; align-items: center; overflow: hidden; }
+    .hero { position: relative; min-height: 92vh; display: flex; align-items: center; overflow: hidden; padding-top: 72px; }
     .hero-img { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1920&q=85'); background-size: cover; background-position: center 40%; }
     .hero-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(105deg, rgba(10,6,4,.88) 0%, rgba(10,6,4,.65) 55%, rgba(10,6,4,.3) 100%); }
     .hero-content { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 5rem 2rem 4rem; display: grid; grid-template-columns: 1fr 340px; gap: 4rem; align-items: center; width: 100%; }
@@ -385,11 +385,14 @@
     .faq-a p { font-size: .92rem; color: var(--mid); line-height: 1.75; }
 
     /* CTA BAND */
-    .cta-band { background: var(--red); padding: 4rem 2rem; text-align: center; }
-    .cta-band h2 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; color: #fff; margin-bottom: .5rem; }
-    .cta-phone { font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 900; color: #fff; font-family: 'Playfair Display', serif; margin: .75rem 0 1.5rem; letter-spacing: .02em; overflow-wrap: break-word; }
-    .cta-sub { color: rgba(255,255,255,.8); font-size: 1rem; margin-bottom: 2rem; }
-    .btn-white { display: inline-flex; align-items: center; gap: .5rem; background: #fff; color: var(--red); padding: .9rem 2.2rem; border-radius: 4px; font-weight: 700; font-size: 1rem; transition: transform .2s, box-shadow .2s; box-shadow: 0 4px 20px rgba(0,0,0,.2); }
+    .cta-band { background: var(--red); padding: 4rem 2rem; }
+    .cta-band-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .cta-band-left { }
+    .cta-band-right { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .cta-band h2 { font-size: clamp(1.6rem, 3vw, 2.6rem); font-weight: 900; color: #fff; margin-bottom: .4rem; }
+    .cta-phone { font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 900; color: #fff; font-family: 'Playfair Display', serif; margin: 0; letter-spacing: .02em; overflow-wrap: break-word; line-height: 1.1; }
+    .cta-sub { color: rgba(255,255,255,.8); font-size: 1rem; margin-top: .6rem; }
+    .btn-white { display: inline-flex; align-items: center; gap: .5rem; background: #fff; color: var(--red); padding: .9rem 2.2rem; border-radius: 4px; font-weight: 700; font-size: 1rem; transition: transform .2s, box-shadow .2s; box-shadow: 0 4px 20px rgba(0,0,0,.2); white-space: nowrap; }
     .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.25); }
     .btn-white svg { width: 18px; height: 18px; }
 
@@ -455,10 +458,10 @@
       .topbar { display: none; }
       .nav-links { display: none; }
       nav { padding: 0 1rem; height: 60px; }
-      .nav-logo-img { width: 48px; height: 48px; }
+      .nav-logo-img { width: 58px; height: 58px; }
 
       /* Hero */
-      .hero { min-height: 85vh; }
+      .hero { min-height: 85vh; padding-top: 60px; }
       .hero-content { grid-template-columns: 1fr; padding: 3.5rem 1.1rem 2.5rem; gap: 2rem; }
       .hero h1 { font-size: clamp(2rem, 8vw, 3rem); }
       .hero-sub { font-size: .95rem; }
@@ -512,7 +515,9 @@
 
       /* CTA band */
       .cta-band { padding: 3rem 1.1rem; }
-      .cta-phone { font-size: clamp(1.6rem, 6vw, 2.4rem); word-break: break-all; }
+      .cta-band-inner { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; }
+      .cta-band-right { align-items: center; }
+      .cta-phone { font-size: clamp(1.8rem, 8vw, 2.6rem); }
       .btn-white { width: 100%; justify-content: center; }
 
       /* FAQ */
@@ -949,10 +954,16 @@
 
 <!-- CTA BAND -->
 <div class="cta-band">
-  <h2 class="reveal">Ready to Order?</h2>
-  <div class="cta-phone reveal"><a href="tel:9375490003" style="color:#fff;">(937) 549-0003</a></div>
-  <p class="cta-sub reveal">Mon – Sat &nbsp;&middot;&nbsp; 4:00 PM – 9:00 PM</p>
-  <a href="tel:9375490003" class="btn-white reveal"><svg><use href="#i-phone"/></svg>Call Now</a>
+  <div class="cta-band-inner">
+    <div class="cta-band-left reveal">
+      <h2>Ready to Order?</h2>
+      <div class="cta-phone"><a href="tel:9375490003" style="color:#fff;">(937) 549-0003</a></div>
+    </div>
+    <div class="cta-band-right reveal d1">
+      <p class="cta-sub">Mon – Sat &nbsp;&middot;&nbsp; 4:00 PM – 9:00 PM</p>
+      <a href="tel:9375490003" class="btn-white"><svg><use href="#i-phone"/></svg>Call Now</a>
+    </div>
+  </div>
 </div>
 
 <!-- CONTACT - hours + info only, no form -->
